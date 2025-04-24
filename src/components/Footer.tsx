@@ -140,7 +140,7 @@ const Footer = () => {
           aria-label="Copyright information"
         >
           <p>
-            &copy; {new Date().getFullYear()} Your Store Name. All rights
+            &copy;2069 Your Store Name. All rights
             reserved. Powered and secured by Nimbus
           </p>
         </section>
