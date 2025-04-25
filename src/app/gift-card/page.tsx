@@ -91,7 +91,7 @@ export default function page() {
                 {openAccordion === "how-it-works" && (
                   <div className="pb-3 text-sm text-gray-600">
                     <p>
-                      Choose your amount, complete your purchase, and we'll email the gift card
+                      Choose your amount, complete your purchase, and we will email the gift card
                       to you or your recipient instantly. It can be used anytime, on any product.
                     </p>
                   </div>
