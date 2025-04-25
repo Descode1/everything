@@ -3,6 +3,8 @@ import { Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/components/context/cartContext";
+import CartPreview from "@/components/cartPreview";
 
 const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
@@ -24,10 +26,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${sourceCodePro.variable} antialiased min-h-screen flex flex-col`}
-      >
+      ><CartProvider>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CartPreview />
+        
+        </CartProvider>
       </body>
     </html>
   );

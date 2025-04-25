@@ -2,10 +2,13 @@
 import { Search, User, ShoppingCart, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useCart } from "./context/cartContext";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, setIsScrolled] = useState(false);
+  const { toggleCart, getTotalItems } = useCart();
+  const itemCount = getTotalItems();
 
   // Handle scroll effect
   useEffect(() => {
@@ -112,12 +115,20 @@ export default function Navbar() {
                 aria-label="Account"
               />
             </Link>
-            <Link href="/cart">
+            <button 
+              onClick={toggleCart}
+              className="relative"
+              aria-label="Shopping cart"
+            >
               <ShoppingCart
                 className="h-5 w-5 text-black hover:text-gray-900 cursor-pointer transition-colors"
-                aria-label="Shopping cart"
               />
-            </Link>
+              {itemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {itemCount}
+                </span>
+              )}
+            </button>
             <button
               type="button"
               className="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-black rounded"

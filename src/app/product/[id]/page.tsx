@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { products } from "@/utils/mockData";
 import { useState, use } from "react";
 import React from "react";
+import { useCart } from "@/components/context/cartContext";
 
 export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
@@ -15,6 +16,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     product?.colors[0] || "white"
   );
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+
+  const { addToCart } = useCart();
 
   if (!product) {
     notFound();
@@ -48,11 +51,11 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             </div>
 
             {/* Image Previews */}
-            <div className="flex justify-center gap-2 md:justify-start md:ml-24">
+            <div className="flex justify-center gap-2  md:justify-start md:ml-24">
               {[1].map((index) => (
                 <div
                   key={index}
-                  className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity"
+                  className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border"
                 >
                   <Image
                     src={product.src}
@@ -122,10 +125,20 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             <button
               className="w-full md:w-48 bg-green-600 text-white py-3 md:py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
               onClick={() => {
-                console.log("Add to cart:", {
-                  ...product,
+                console.log("Adding to cart:", {
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
                   quantity,
                   color: selectedColor,
+                });
+                addToCart({
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  color: selectedColor,
+                  quantity: quantity,
+                  src: product.src,
                 });
               }}
             >
