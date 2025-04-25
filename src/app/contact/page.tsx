@@ -27,7 +27,7 @@ export default function page() {
       <div className="max-w-3xl mx-auto space-y-6">
         <h1 className="text-3xl font-bold text-center">Contact Us</h1>
         <p className="text-center text-gray-600">
-          Have a question or feedback? We'd love to hear from you.
+          Have a question or feedback? We would love to hear from you.
         </p>
 
         {submitted && (
