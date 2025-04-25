@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Checkout() {
-  const { cart, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
+  const { cart,  getTotalPrice, clearCart } = useCart();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -13,7 +13,7 @@ export default function Checkout() {
     address: "",
     city: "",
    
-    country: "United States",
+    country: "Rwanda",
     paymentMethod: "credit",
   });
   const [orderPlaced, setOrderPlaced] = useState(false);
