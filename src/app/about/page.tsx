@@ -1,6 +1,6 @@
 import React from "react";
 
-function page() {
+function  page() {
   return (
     <div className="flex items-center justify-center min-h-screen text-center px-4 py-8">
       <div className="max-w-2xl ">

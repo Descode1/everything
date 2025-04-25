@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { faqs } from '@/utils/mockData';
 
-export default function page() {
+export default function Page() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
