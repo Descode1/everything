@@ -42,7 +42,7 @@ export default function Checkout() {
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
         <div className="bg-green-50 p-8 rounded-lg mb-8">
           <h1 className="text-3xl font-bold text-green-700 mb-4">Order Placed Successfully!</h1>
-          <p className="mb-6">Thank you for your purchase. We've sent a confirmation email to {formData.email}.</p>
+          <p className="mb-6">Thank you for your purchase. We have sent a confirmation email to {formData.email}.</p>
           <Link 
             href="/"
             className="inline-block bg-black text-white py-3 px-6 rounded-md hover:bg-gray-800 transition-colors"
