@@ -125,13 +125,6 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             <button
               className="w-full md:w-48 bg-green-600 text-white py-3 md:py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
               onClick={() => {
-                console.log("Adding to cart:", {
-                  id: product.id,
-                  name: product.name,
-                  price: product.price,
-                  quantity,
-                  color: selectedColor,
-                });
                 addToCart({
                   id: product.id,
                   name: product.name,

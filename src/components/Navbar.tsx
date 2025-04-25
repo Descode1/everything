@@ -186,7 +186,7 @@ export default function Navbar() {
             <ul className="flex flex-col p-4">
               <li className="py-2">
                 <Link
-                  href="/shop"
+                  href="/"
                   className="text-black font-bold hover:text-gray-700 font-medium transition-colors block"
                   onClick={toggleMenu}
                 >
